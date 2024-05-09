@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: AIRBNB
+    schema: RAW
+    tables:
+      - name: raw_hosts
+      - name: raw_listings
+      - name: raw_reviews
