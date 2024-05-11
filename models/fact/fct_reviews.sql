@@ -12,7 +12,8 @@ stg_raw_reviews as (
 
 )
 
-select 
+select
+    {{dbt_utils.generate_surrogate_key(['listing_id', 'review_date', 'reviewer_name','review_text'])}} as review_id,
     listing_id,
     review_date,
     reviewer_name,

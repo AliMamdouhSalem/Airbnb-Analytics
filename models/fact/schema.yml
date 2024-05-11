@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: fct_reviews
+    description: "fact table for reviews on Airbnb listings"
+    columns:
+      - name: listing_id
+        data_type: number
+        description: ""
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_listings')
+              field: listing_id
+            
+
+      - name: review_date
+        data_type: timestamp_ntz
+        description: ""
+        tests:
+          - not_null
+          
+      - name: reviewer_name
+        data_type: varchar
+        description: ""
+
+      - name: review_text
+        data_type: varchar
+        description: ""
+
+      - name: review_sentiment
+        data_type: varchar
+        description: ""
