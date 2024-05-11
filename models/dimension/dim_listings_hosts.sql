@@ -24,6 +24,7 @@ select
     l.name,
     l.room_type,
     l.minimum_nights,
+    l.price,
     l.host_id,
     h.host_name,
     h.is_superhost,
