@@ -3,6 +3,10 @@ version: 2
 models:
   - name: dim_listings_hosts
     description: "dimension table for hosts and their listings"
+    tests:
+      - dbt_expectations.expect_table_column_count_to_equal_other_table:
+          compare_model: source('airbnb', 'raw_listings')
+          severity: warn
     columns:
       - name: listing_id
         data_type: number
@@ -28,7 +32,17 @@ models:
       - name: price
         data_type: number
         description: "Price per night"
+        tests:
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              quantile: 0.99
+              min_value: 50
+              max_value: 500
+              severity: warn
 
+          - dbt_expectations.expect_column_max_to_be_between:
+              max_value: 5000
+              severity: warn
+        
       - name: host_id
         data_type: number
         description: "Unique ID for host"
