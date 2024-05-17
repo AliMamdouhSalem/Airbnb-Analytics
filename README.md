@@ -1,14 +1,17 @@
 # Airbnb Analytics
-In this project I used DBT Cloud to transform Airbnb listings, hosts and reviews data in berlin, and create a datawarehouse on Snowflake. 
+This is an ELT project where I used DBT Cloud to transform Airbnb listings, hosts and reviews data in berlin, create a datawarehouse on Snowflake and visualise data using Power BI.
+
+![Architecture](https://github.com/AliMamdouhSalem/SnowFlakeDBT/assets/74428524/51aa7561-45d7-4a0d-aa7a-9cccdbd148e4)
+
 
 # Data
-The data was extracted from https://insideairbnb.com/get-the-data/. \
+The data was extracted from https://insideairbnb.com/get-the-data/ and loaded into snowflake as csv files. \
 The data extracted includes the following tables:
 - listings
 - hosts
 - reviews
   
-while the full moon dates table wasn't extracted from the airbnb data \
+while the full moon dates table wasn't extracted from the airbnb data
 
 these table have the following schema\
 ![input_schema](https://github.com/AliMamdouhSalem/SnowFlakeDBT/assets/74428524/ba19b5a4-7730-4aa9-937e-28087bd43bef)
